@@ -11,8 +11,7 @@ public class HeroSkills implements Skills {
     @Override
     public Entity defaultAttack(Hero hero, Enemy enemy) {
         if(hero.getModifiers().attackIsCritical(hero)){
-            enemy.setHealth(enemy.getHealth() -  (hero.getDamage(hero) + calculations.getValueOfPercent(hero.getDamage(hero),
-                    hero.getModifiers().getCriticalDamage(hero))));
+            enemy.setHealth(enemy.getHealth() -  ( calculations.getValueOfPercent(hero.getDamage(hero), hero.getModifiers().getCriticalDamage(hero))));
         }else {
             enemy.setHealth(enemy.getHealth() - hero.getDamage(hero));
         }

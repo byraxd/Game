@@ -17,10 +17,10 @@ public class Modifiers {
 
     public static Modifiers getModifiersForHero() {
         Modifiers modifiers = new Modifiers();
-        modifiers.setStrength(1);
-        modifiers.setAgility(1);
-        modifiers.setIntellect(1);
-        modifiers.setLuck(1);
+        modifiers.setStrength(5);
+        modifiers.setAgility(5);
+        modifiers.setIntellect(5);
+        modifiers.setLuck(5);
         return modifiers;
     }
 
