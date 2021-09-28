@@ -3,6 +3,7 @@ package com.company.Fight;
 import com.company.CustomClasses.calculations.Calculations;
 import com.company.Entity.Enemy.Enemy;
 import com.company.Entity.Hero.Hero;
+import com.company.Main;
 import com.company.WolrdGenerations.WorldGeneration.WorldGeneration;
 
 import java.util.Scanner;
@@ -28,11 +29,14 @@ public class Fight {
         System.out.println("Здоровье врага: " + enemy.getHealth() + " Урон врага: " + enemy.getDamage());
         if (heroIsAlive(hero)) {
             enemiesTurn(hero, enemy);
+        }else {
+            endFight();
         }
-        if(!heroIsAlive(hero)){
-            worldGeneration.displayMenu(hero);
+        if (!heroIsAlive(hero)) {
+            endFight();
+        }else{
+            fight(hero, enemy);
         }
-        fight(hero, enemy);
 
     }
 
@@ -87,7 +91,7 @@ public class Fight {
     }
 
     public void endFight() {
-        System.out.println("Бой окончен");
-
+        System.out.println("Игра начинается заново ");
+        worldGeneration.startGame();
     }
 }

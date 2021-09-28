@@ -7,8 +7,7 @@ import com.company.WolrdGenerations.WorldGeneration.WorldGeneration;
 public class Main {
 
     public static void main(String[] args) {
-        Hero hero = new Hero();
         WorldGeneration worldGeneration = new WorldGeneration();
-        worldGeneration.displayMenu(Hero.setStatsOfHero(hero));
+        worldGeneration.startGame();
     }
 }

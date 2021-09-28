@@ -13,7 +13,16 @@ public class WorldGeneration {
     private int playerChoice;
     private final Scanner scanner = new Scanner(System.in);
     private final Calculations calculations = new Calculations();
+
+    public void startGame(){
+        Hero hero = new Hero();
+        displayMenu(Hero.setStatsOfHero(hero));
+    }
+
     public void displayMenu(Hero hero){
+        if(hero.getDeep() >= 1350){
+            System.out.println("Добро пожаловать во второй слой бездны 'Манящий лес' ");
+        }
         System.out.println("Вы находитесь на высоте: " + hero.getDeep());
         System.out.println("Выберите что хотите делать дальше(1-спуститься глубже; 2-подняться выше): ");
         playerChoice = scanner.nextInt();
